@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <header>
+        <h1>URL Shortener</h1>
+        {% if 'username' in session %}
+            <p>Hello, {{ session['username'] }}! (<a href="{{ url_for('logout') }}">Logout</a>)</p>
+        {% endif %}
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

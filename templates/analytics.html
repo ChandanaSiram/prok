@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+</head>
+<body>
+    <h1>Your Short Links</h1>
+    <ul>
+        {% for link in links %}
+            <li>
+                Original Link: {{ link['original_link'] }}<br>
+                Short Link: {{ link['short_link'] }}<br>
+                Expiration Time: {{ link['expiration_time'] }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
